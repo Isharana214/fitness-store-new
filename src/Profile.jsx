@@ -4,45 +4,60 @@ const Profile = ({ setUser, setActiveTab }) => {
   const [userData, setUserData] = useState({ 
     name: '', phone: '', email: '', gender: '', dob: '', height: '', weight: '', fitnessGoal: '' 
   });
+  const imageUrl = userData?.imageUrl;
   const [myWorkouts, setMyWorkouts] = useState([]);
   const [myPlans, setMyPlans] = useState([]);
   const [monthlyData, setMonthlyData] = useState({});
   const [activeSection, setActiveSection] = useState('profile');
 
-  const loadUserData = () => {
-    try {
-      const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
-      const email = storedUser.email;
+ const loadUserData = () => {
+  try {
+    const storedUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
-      if (email) {
-        const savedProfile = JSON.parse(localStorage.getItem(`userProfileData_${email}`) || '{}');
-        
-        setUserData({ 
-          name: storedUser.name || '',
-          email: email, 
-          phone: savedProfile.phone || '',
-          gender: savedProfile.gender || '',
-          dob: savedProfile.dob || '',
-          height: savedProfile.height || '',
-          weight: savedProfile.weight || '',
-          fitnessGoal: savedProfile.fitnessGoal || ''
-        });
+    console.log("LOGGED USER:", storedUser);
 
-        // સુધારેલ કી સાથે ડેટા લોડિંગ
-        setMyWorkouts(JSON.parse(localStorage.getItem(`myWorkouts_${email}`) || '[]'));
-        setMyPlans(JSON.parse(localStorage.getItem(`myPlans_${email}`) || '[]'));
-        setMonthlyData(JSON.parse(localStorage.getItem(`monthlyProgress_${email}`) || '{}'));
-      }
-    } catch (error) {
-      console.error("Error loading user data:", error);
+    if (!storedUser?.email) {
+      console.log("No user found in localStorage");
+      return;
     }
-  };
 
+    const email = storedUser.email;
+
+    const savedProfile = JSON.parse(
+      localStorage.getItem(`userProfileData_${email}`) || '{}'
+    );
+
+    setUserData({
+      name: storedUser.name || '',
+      email,
+      phone: savedProfile.phone || '',
+      gender: savedProfile.gender || '',
+      dob: savedProfile.dob || '',
+      height: savedProfile.height || '',
+      weight: savedProfile.weight || '',
+      fitnessGoal: savedProfile.fitnessGoal || '',
+      imageUrl: savedProfile.imageUrl || ''
+    });
+
+    setMyWorkouts(JSON.parse(localStorage.getItem(`myWorkouts_${email}`) || '[]'));
+    setMyPlans(JSON.parse(localStorage.getItem(`myPlans_${email}`) || '[]'));
+    setMonthlyData(JSON.parse(localStorage.getItem(`monthlyProgress_${email}`) || '{}'));
+
+  } catch (error) {
+    console.error("Error loading user data:", error);
+  }
+};
+useEffect(() => {
+  const user = localStorage.getItem("loggedInUser");
+
+  if (!user) {
+    setActiveTab("login"); // or home
+  }
+}, []);
   // Profile.jsx માં આ ફેરફાર કરો
 useEffect(() => {
   loadUserData();
-}, [activeSection]); // activeTab ને બદલે activeSection વાપરો
-
+}, []);
   const handleSave = () => {
     const email = userData.email;
     if (email) {
@@ -122,9 +137,31 @@ useEffect(() => {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#fff', color: '#000' }}>
       <div style={{ width: '280px', backgroundColor: '#1a1a1a', padding: '40px 20px', color: '#fff', textAlign: 'center' }}>
-        <div style={{ width: '80px', height: '80px', backgroundColor: '#555', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', fontSize: '40px', color: '#fff', marginLeft: 'auto', marginRight: 'auto' }}>
-          👤
-        </div>
+        <div style={{
+  width: '80px',
+  height: '80px',
+  borderRadius: '50%',
+  overflow: 'hidden',
+  backgroundColor: '#555',
+  marginBottom: '20px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#fff',
+  fontSize: '40px'
+}}>
+  {imageUrl ? (
+    <img
+      src={imageUrl}
+      alt="profile"
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+    />
+  ) : (
+    <span>👤</span>
+  )}
+</div>
         <h3>{userData.name || "User"}</h3>
         <p style={{ fontSize: '12px', color: '#ff4500' }}>{userData.email}</p>
         
