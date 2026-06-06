@@ -221,10 +221,16 @@ const FitnessStore = () => {
   justifyContent: 'space-between' // બટનને નીચે ધકેલવા માટે
 }}>
 <img 
-    src={p.img ? p.img : placeholder} 
-    alt={p.title} 
-    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '5px' }} 
-  />
+  src={p.img ? p.img : placeholder} 
+  alt={p.title} 
+  style={{ 
+    width: '100%', 
+    height: '200px', 
+    objectFit: 'contain', // 'cover' ને બદલે 'contain' વાપરો
+    backgroundColor: '#333', // જો ઈમેજ નાની હોય તો પાછળનો ભાગ સરસ દેખાય
+    borderRadius: '5px' 
+  }} 
+/>
             <p style={{ fontSize: '1.1rem', color: '#aaa' }}>₹{p.price}</p>
             <button onClick={() => addToCart(p)} style={{ width: '100%', padding: '10px', background: '#ff4500', border: 'none', color: '#fff', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>ADD TO CART</button>
           </div>
