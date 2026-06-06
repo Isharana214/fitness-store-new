@@ -211,14 +211,20 @@ const FitnessStore = () => {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', maxWidth: '1200px', margin: 'auto' }}>
         {products.filter(p => selectedCategory === "All" || p.category === selectedCategory).map(p => (
-          <div key={p.id} style={{ background: '#1e1e1e', padding: '15px', borderRadius: '10px', border: '1px solid #444' }}>
+         <div key={p.id} style={{ 
+  background: '#1e1e1e', 
+  padding: '15px', 
+  borderRadius: '10px', 
+  border: '1px solid #444',
+  display: 'flex',       // Flexbox ઉમેરો
+  flexDirection: 'column', // કન્ટેન્ટ ઉપર-નીચે ગોઠવવા માટે
+  justifyContent: 'space-between' // બટનને નીચે ધકેલવા માટે
+}}>
 <img 
-  src={p.img || placeholder}
-  alt={p.title}
-  onError={(e) => {
-    e.target.src = placeholder;
-  }}
-/>
+    src={p.img ? p.img : placeholder} 
+    alt={p.title} 
+    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '5px' }} 
+  />
             <p style={{ fontSize: '1.1rem', color: '#aaa' }}>₹{p.price}</p>
             <button onClick={() => addToCart(p)} style={{ width: '100%', padding: '10px', background: '#ff4500', border: 'none', color: '#fff', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>ADD TO CART</button>
           </div>
