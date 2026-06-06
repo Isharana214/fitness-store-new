@@ -924,11 +924,14 @@ const JoinButton = () => {
           borderRadius: '15px', 
           overflow: 'hidden' 
         }}>
-          <img 
-            src={imgUrl} 
-            alt="Bootcamp workout" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-          />
+          <img
+  src={imgUrl || "/placeholder.jpg"}
+  alt="Bootcamp workout"
+  onError={(e) => {
+    e.currentTarget.src = "/placeholder.jpg";
+  }}
+  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+/>
         </div>
       ))}
     </div>
