@@ -1,0 +1,2575 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0c0e;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* નેવિગેશન બાર */
+.navbar {
+  display: flex;
+  
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #000000;
+  border-bottom: 1px solid #1c1c1e;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+.nav-link.inactive {
+  color: #8e8e93;
+}
+
+.get-app-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* સબ નેવિગેશન ટેબ્સ - હવે સેન્ટરમાં દેખાશે */
+.tabs-container {
+  display: flex;
+  justify-content: center; /* આનાથી બટન્સ સેન્ટરમાં આવી જશે */
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1c1c1e;
+  gap: 15px; /* બટન્સ વચ્ચે થોડી સ્પેસ */
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  color: #8e8e93;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: none; /* જેવું લખાણ છે તેવું જ રાખવા (cultpass Home) */
+  transition: all 0.2s ease;
+}
+
+/* સિલેક્ટેડ બટનનો ડાર્ક બેકગ્રાઉન્ડ લુક (જેવો ઈમેજમાં છે) */
+.tab-btn.active {
+  background-color: #000000; 
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.tab-btn:hover {
+  color: #ffffff;
+}
+
+/* મુખ્ય લેઆઉટ */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 120px);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ડાબો ભાગ (લખાણ) */
+.left-section {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0c0c0e;
+  box-sizing: border-box;
+}
+
+.main-title {
+  font-size: 46px;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+}
+
+.highlight-text {
+  color: #dcb2f2;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: #e5e5ea;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.bullet-dot {
+  color: #ff453a;
+  font-size: 18px;
+}
+
+.price-text {
+  font-size: 16px;
+  color: #8e8e93;
+  margin-bottom: 30px;
+}
+
+.price-bold {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.trial-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+/* જમણો ભાગ (ઈમેજ) */
+.right-section {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* QR કોડ બોક્સ */
+.qr-container {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  width: 130px;
+}
+
+.qr-text {
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.qr-image {
+  width: 110px;
+  height: 110px;
+}
+/* કાઉન્ટડાઉન બેનર સેક્શન */
+.timer-banner {
+  background-color: #0c2018; /* ડાર્ક ગ્રીન બેકગ્રાઉન્ડ જેવું ઈમેજમાં છે */
+  border: 1px solid #1c352a;
+  border-radius: 8px;
+  margin: 30px 40px;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.banner-left h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.banner-left p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #e5e5ea;
+  letter-spacing: 0.5px;
+}
+
+/* ટાઈમર બોક્સ આર્કિટેક્ચર */
+.timer-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.time-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+}
+
+.time-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: monospace; /* જેથી નંબર્સ હલે નહીં */
+}
+
+.time-label {
+  font-size: 11px;
+  color: #8e8e93;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.timer-separator {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  padding-bottom: 20px; /* સેપરેટર બે ટાઈમ વચ્ચે પ્રોપર સેટ કરવા */
+}
+
+/* ફીચર્સ હેડિંગ સેક્શન નીચે */
+.features-header {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8e8e93;
+  margin: 50px 0 20px 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #010204;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ૧. નેવિગેશન હેડર */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #000000;
+  border-bottom: 1px solid #14161b;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+.nav-link.inactive {
+  color: #8e8e93;
+}
+
+.get-app-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* ૨. સેન્ટર અલાઈન ટેબ્સ */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #14161b;
+  gap: 15px;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  color: #a1a1aa;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tab-btn.active {
+  background-color: #000000; 
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ૩. મુખ્ય હીરો સેક્શન */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  height: calc(85vh - 120px);
+  width: 100%;
+}
+
+.left-section {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0a0b0d;
+}
+
+.main-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0 0 25px 0;
+}
+
+.highlight-text {
+  color: #e2b4f7;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 18px;
+  color: #d1d1d6;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.bullet-dot {
+  color: #ff453a;
+}
+
+.price-text {
+  font-size: 16px;
+  color: #8e8e93;
+  margin-bottom: 30px;
+}
+
+.price-bold {
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.trial-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 14px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.right-section {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ૪. કાઉન્ટડાઉન બૅનર */
+.timer-banner {
+  background-color: #04160f; 
+  border: 1px solid #0d2d20;
+  border-radius: 8px;
+  margin: 30px 40px;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-left h2 { font-size: 26px; font-weight: 800; margin: 0 0 6px 0; }
+.banner-left p { font-size: 16px; font-weight: 700; margin: 0; color: #a1a1aa; }
+
+.timer-container { display: flex; gap: 15px; align-items: center; }
+.time-segment { display: flex; flex-direction: column; align-items: center; }
+.time-number { font-size: 30px; font-weight: 800; font-family: monospace; }
+.time-label { font-size: 10px; color: #71717a; text-transform: uppercase; margin-top: 2px; }
+.timer-separator { font-size: 24px; color: #ffffff; padding-bottom: 15px; }
+
+.features-header {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #71717a;
+  margin: 60px 0 30px 0;
+}
+
+/* ૫. એડવાન્સ ફીચર્સ ગ્રીડ લેઆઉટ (તમારા ફોટો મુજબ સેમ ટુ સેમ) */
+.features-grid-container {
+  padding: 0 40px 80px 40px;
+  display: grid;
+  /* ૩ કોલમ સ્ટ્રક્ચર: ડાબી બાજુ, વચ્ચે મોટી ઉભી કોલમ, જમણી બાજુ */
+  grid-template-columns: 1fr 1.1fr 1fr; 
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* કાર્ડ ડિઝાઈન */
+.feature-card {
+  background-color: #0b0d12;
+  border: 1px solid #1c1e24;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ડાબી અને જમણી બાજુના કાર્ડ્સની ફિક્સ હાઇટ */
+.standard-card {
+  height: 260px;
+}
+
+/* વચ્ચેનું મોટું વર્ટિકલ કાર્ડ */
+.center-large-card {
+  height: 544px; /* બંને નાના કાર્ડ + ગેપ જેટલી જ હાઇટ */
+  justify-content: space-between;
+  padding: 40px 30px;
+}
+
+.card-desc-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e4e4e7;
+  line-height: 1.4;
+  margin-top: 15px;
+  max-width: 220px;
+}
+
+/* ૧. એનર્જી મીટર એનિમેશન */
+.pink-bolt {
+  font-size: 52px;
+  color: #f472b6;
+  margin-bottom: 5px;
+}
+
+.energy-meter-bar {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 15px;
+}
+
+.meter-block {
+  width: 5px;
+  height: 16px;
+  background-color: #f472b6;
+  border-radius: 1px;
+}
+
+.meter-block.off {
+  background-color: #27272a;
+}
+
+/* ૨. વચ્ચેના ગોળ આઈકોન્સવાળો વ્યુ */
+.bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.format-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #111319;
+  border: 1px solid #27272a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #a1a1aa;
+}
+
+.bubble-icon { font-size: 16px; margin-bottom: 2px; }
+
+/* મોટું હાઈલાઈટ લખાણ */
+.center-hero-text {
+  margin-bottom: 20px;
+}
+
+.big-number {
+  font-size: 72px;
+  font-weight: 900;
+  color: #f472b6;
+  line-height: 1;
+}
+
+.big-sub {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* ૩. મેડિટેશન ઈમેજ કાર્ડ */
+.meditation-bg-card {
+  background-image: linear-gradient(to top, #010204 15%, transparent 80%), url('./assets/images/meditation.jpg');
+  background-position: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+/* ૪. કેલરી અને પ્રોગ્રેસ કાર્ડ */
+.fire-icon {
+  font-size: 48px;
+  color: #fb923c;
+  margin-bottom: 10px;
+}
+
+.cal-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* ૫. લોઅર પ્રોગ્રામ્સ લિસ્ટ */
+.pink-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pink-list-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #71717a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.program-name-item {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f472b6;
+}
+
+.program-name-item.blue-text { color: #38bdf8; }
+.program-name-item.purple-text { color: #c084fc; }
+
+/* QR કોડ ઓવરલે બોક્સ (છેલ્લા બોક્સમાં સેટ કર્યો છે) */
+.floating-qr-box {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.floating-qr-box span { font-size: 8px; font-weight: 800; text-align: center; margin-bottom: 4px; line-height: 1.1; }
+.floating-qr-box img { width: 85px; height: 85px; }
+/* લાઇવ વર્કઆઉટ સેક્શન કન્ટેનર */
+.live-workout-section {
+  padding: 40px;
+  background-color: #0c0c0e;
+  position: relative;
+}
+
+/* પાછળનું મોટું બેનર/વિડિયો બોક્સ */
+.live-video-banner {
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  background-image: url('./assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: -180px; /* આનાથી આગળના કાર્ડ્સ અડધા ઉપર ઓવરલેપ થશે */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* સ્લાઇડર કન્ટેનર એરિયા */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* ડાબા અને જમણા એરો બટન્સ */
+.slider-arrow-btn {
+  position: absolute;
+  background-color: rgba(21, 22, 26, 0.9);
+  border: 1px solid #2c2c2e;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.slider-arrow-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
+/* કાર્ડ્સની વિન્ડો */
+.carousel-window {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* સિંગલ ટ્રેનર કાર્ડ ડિઝાઈન */
+.trainer-card {
+  min-width: calc(33.333% - 16px); /* એકસાથે ૩ કાર્ડ પરફેક્ટ દેખાશે */
+  background-color: #0f1115;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #1c1e24;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.trainer-img-box {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.trainer-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.trainer-name {
+  font-size: 13px;
+  color: #8e8e93;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.workout-type-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.workout-meta-info {
+  font-size: 11px;
+  color: #a1a1aa;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* ગ્રીન જોઈન બટન */
+.join-live-btn {
+  background-color: #1a2e26;
+  border: 1px solid #224d38;
+  color: #34d399; /* ગ્રીન કલર */
+  padding: 8px 24px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.join-live-btn::before {
+  content: '●';
+  color: #10b981;
+  font-size: 10px;
+}
+
+.join-live-btn:hover {
+  background-color: #10b981;
+  color: #ffffff;
+}
+/* એટ-હોમ કેટેગરી સેક્શન */
+.athome-section {
+  padding: 60px 40px;
+  background-color: #010204;
+  text-align: center;
+}
+
+.athome-header {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #71717a;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* મુખ્ય વિડિયો અને કાર્ડ્સનું કમ્બાઈન્ડ કન્ટેનર */
+.athome-frame {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #0b0d12;
+  border: 2px solid #1c1e24;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+/* ઉપરનો મેઈન પ્લેયર/વિડિયો એરિયા */
+.athome-main-display {
+  width: 100%;
+  height: 260px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 25px;
+}
+
+/* કેટેગરીઝ માટેનું સ્લાઇડર ટ્રેક લોજિક */
+.categories-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.cat-arrow-btn {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid #27272a;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.cat-arrow-left { left: -10px; }
+.cat-arrow-right { right: -10px; }
+
+.categories-window {
+  width: 100%;
+  overflow: hidden;
+}
+
+.categories-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* ઊભા રેક્ટેન્ગલ કાર્ડ્સની ડિઝાઈન */
+.category-item-card {
+  min-width: calc(25% - 12px); /* એકસાથે બરાબર ૪ કાર્ડ લાઈનમાં દેખાશે */
+  height: 190px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* કાર્ડ ઉપર બ્લેક શેડ ઓવરલે જેથી અક્ષરો વંચાય */
+.category-item-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 70%);
+  z-index: 1;
+}
+
+.category-card-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.category-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.category-card-sub {
+  font-size: 8px;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 3px;
+}
+/* બેસ્ટ ઇન ક્લાસ ટ્રેનર્સ સેક્શન */
+.expert-trainers-section {
+  padding: 80px 40px;
+  background-color: #010204;
+  display: flex;
+  justify-content: center;
+}
+
+.expert-content-box {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* ડાબી બાજુનું હેડિંગ બોક્સ */
+.expert-left-heading {
+  flex: 0 0 30%;
+}
+
+.expert-sub {
+  font-size: 14px;
+  font-weight: 700;
+  color: #71717a;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.expert-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* જમણી બાજુની આખી ડાર્ક ફ્રેમ */
+.expert-right-grid-frame {
+  flex: 1;
+  background-color: #0b0d12;
+  border: 1px solid #1c1e24;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* રિયલ ૪-કાર્ડ્સ ગ્રીડ લેઆઉટ */
+.expert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* સિંગલ સ્લીક ટ્રેનર કાર્ડ */
+.expert-item-card {
+  background-color: #12141c;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* ટ્રેનરનો પ્રોફાઇલ ફોટો એરિયા */
+.expert-img-placeholder {
+  width: 45%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ટેક્સ્ટ લેયર (નામ અને ફોર્મેટ) */
+.expert-text-layer {
+  width: 55%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.expert-name-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.5px;
+}
+
+.expert-format-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a1a1aa;
+  letter-spacing: 1px;
+  margin: 0;
+}
+/* ગોલ-બેઝ્ડ પ્રોગ્રામ્સ સેક્શન સ્ટાઈલીંગ */
+.goal-programs-section {
+  padding: 60px 40px;
+  background-color: #010204;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.goal-section-header {
+  margin-bottom: 30px;
+}
+
+.goal-sub-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #71717a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.goal-main-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 5px 0 0 0;
+  letter-spacing: -0.5px;
+}
+
+/* સ્લાઇડર કન્ટેનર લોજિક */
+.goal-slider-outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.goal-slider-window {
+  width: 100%;
+  overflow: hidden;
+}
+
+.goal-slider-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* સિંગલ પ્રોગ્રામ કાર્ડ ડિઝાઈન */
+.goal-program-card {
+  min-width: calc(25% - 15px); /* એક રો માં બરાબર ૪ કાર્ડ સેટ થશે */
+  background-color: #0b0d12;
+  border: 1px solid #1c1e24;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* કાર્ડ ઇમેજ એરિયા */
+.goal-card-img {
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* જો કોઈ સીઝન કે પોપ્યુલર ટેગ હોય તો તેના માટે */
+.goal-card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* કાર્ડ ટેક્સ્ટ બોડી */
+.goal-card-body {
+  padding: 16px;
+  background-color: #0b0d12;
+}
+
+.goal-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+}
+
+.goal-card-coach {
+  font-size: 12px;
+  color: #a1a1aa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* નેવિગેશન એરો બટન્સ */
+.goal-arrow-btn {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid #27272a;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.goal-left-arrow { left: -20px; }
+.goal-right-arrow { right: -20px; }
+/* ૩ સર્કલ આઇકન્સ સેક્શન સ્ટાઇલીંગ */
+.three-icons-section {
+  padding: 80px 40px;
+  background-color: #010204;
+  display: flex;
+  justify-content: center;
+}
+
+.icons-wrapper-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 900px;
+  width: 100%;
+  gap: 30px;
+}
+
+.single-icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+/* આઇકન પાછળનું ડાર્ક ગ્રે ગોળ બેકગ્રાઉન્ડ */
+.circle-avatar-bg {
+  width: 80px;
+  height: 80px;
+  background-color: #161922;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.circle-avatar-bg:hover {
+  transform: translateY(-5px);
+}
+
+/* આઇકન ચિન્હ (પ્લે, બોલ્ટ, ગ્રાફ) */
+.icon-symbol-text {
+  font-size: 26px;
+  color: #a4b3c6;
+}
+
+/* નીચે લખેલો વાઇટ સ્લીક ટેક્સ્ટ */
+.icon-desc-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e4e4e7;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 180px;
+}
+/* પ્રાઇસિંગ અને મેમ્બરશિપ કાર્ડ્સ સેક્શન */
+.pricing-grid-section {
+  padding: 60px 20px;
+  background-color: #010204;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ફ્લેક્સિબલ હોરિઝોન્ટલ ગ્રીડ */
+.pricing-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* સિંગલ પ્લાન કાર્ડ ડિઝાઇન */
+.price-package-card {
+  background-color: #12141c;
+  border-radius: 12px;
+  padding: 30px 24px;
+  width: 210px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #1e2230;
+  text-align: left;
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.price-package-card:hover {
+  transform: translateY(-4px);
+  border-color: #2f354a;
+}
+
+/* ફ્રી ટ્રાયલ કાર્ડ માટે સેન્ટર અલાઈનમેન્ટ */
+.text-center-card {
+  text-align: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* કાર્ડની અંદર મોટી સંખ્યા (7, 24, 12, 6, 3) */
+.pack-big-number {
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.pack-duration-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #a1a1aa;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* મિડલ હાઇલાઇટ્સ */
+.pack-middle-badge {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+.pack-price-container {
+  margin: 20px 0;
+}
+
+/* ચેકેડ/ઓરિજિનલ ક્રોસ પ્રાઈઝ */
+.original-strike-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #71717a;
+  margin-right: 8px;
+}
+
+/* એક્ચ્યુઅલ ઓફર પ્રાઈઝ */
+.actual-discounted-price {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.per-month-split-label {
+  font-size: 12px;
+  color: #a1a1aa;
+  margin-top: 4px;
+}
+
+/* ઓફર્સની નાની પિંક/ગ્રે બુલેટ લિસ્ટ */
+.pack-features-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.bullet-feature-row {
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* BUY NOW વાઇટ બટન */
+.pack-action-btn {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.pack-action-btn:hover {
+  background-color: #e4e4e7;
+}
+
+.font-bold-btn {
+  font-size: 15px;
+}
+
+/* નીચેની ફૂટર કન્ડીશન નોટ */
+.effective-footer-note {
+  font-size: 12px;
+  color: #71717a;
+  margin-top: 25px;
+  font-weight: 600;
+}
+/* પ્રાઇસિંગ કાર્ડ્સ ગ્રીડ - હવે એક જ લાઈનમાં */
+.pricing-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* અહીં nowrap કર્યું છે જેથી લાઈન તૂટે નહીં */
+  gap: 12px;         /* કાર્ડ્સ વચ્ચેનું અંતર */
+  max-width: 1200px;
+  width: 100%;
+   /* જો સ્ક્રીન નાની હોય તો સ્ક્રોલ કરવા માટે */
+  padding-bottom: 10px;
+}
+
+.price-package-card {
+  background-color: #12141c;
+  border-radius: 12px;
+  padding: 20px 15px;
+  min-width: 180px; /* કાર્ડની વિડ્થ થોડી ઘટાડી જેથી 5 કાર્ડ સમાઈ જાય */
+  flex: 0 0 auto;   /* કાર્ડ પોતાની સાઈઝ જાળવી રાખશે */
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #1e2230;
+  text-align: left;
+  transition: transform 0.2s;
+}
+.comparison-container { background-color: #010204; color: #fff; padding: 40px; text-align: center; font-family: sans-serif; }
+.main-heading { font-size: 40px; margin-bottom: 10px; }
+.sub-heading { color: #a1a1aa; margin-bottom: 40px; }
+
+.table-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #1e2230; padding: 20px 0; }
+.cell { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.label { align-items: flex-start; text-align: left; font-weight: bold; }
+
+/* કલર ઇફેક્ટ્સ */
+.col-title { font-size: 24px; font-weight: 900; }
+.gold { color: #f59e0b; }
+.silver { color: #9ca3af; }
+.pink { color: #ec4899; }
+.sub-navbar {
+  display: flex;
+  
+  background-color: #000; /* કાળી પટ્ટી */
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+/* નેવબારમાં રહેલા select માટે */
+.navbar select {
+  color: white; /* નેવબારમાં સફેદ */
+}
+
+/* ડ્રોપડાઉનમાં રહેલા option માટે */
+.navbar select option {
+  color: black; /* લિસ્ટમાં કાળું */
+  background-color: white; /* લિસ્ટનું બેકગ્રાઉન્ડ સફેદ */
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .features-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .trainer-card {
+    min-width: 100%;
+  }
+
+  .goal-program-card {
+    min-width: 80%;
+  }
+
+  .pricing-cards-container {
+    overflow-x: auto;
+  }
+
+  .expert-content-box {
+    flex-direction: column;
+  }
+
+  .icons-wrapper-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width:768px){
+  .tabs-container{
+    overflow-x:auto;
+    white-space:nowrap;
+    justify-content:flex-start;
+  }
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+body{
+  overflow-x:hidden;
+}
+/* મેનૂ બટન (Hamburger Icon) */
+.menu-toggle {
+  display: none; /* ડેસ્કટોપમાં છુપાવો */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* મોબાઈલ સ્ક્રીન માટે સેટિંગ્સ */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* મોબાઈલમાં દેખાડો */
+  }
+
+  .nav-links {
+    display: none; /* ડિફોલ્ટ હાઈડ કરો */
+    flex-direction: column;
+    
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+    z-index: 1000;
+  }
+
+  /* જ્યારે મેનૂ એક્ટિવ હોય ત્યારે */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .tab-btn {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    text-align: center;
+  }
+}
+/* ૧. મોબાઈલ માટે: મેનૂ બંધ રાખો */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important; /* !important થી તે જબરદસ્તી બંધ રહેશે */
+    flex-direction: column;
+    
+    left: 0;
+    width: 100%;
+    background: #000;
+  }
+
+  /* ૨. જ્યારે active ક્લાસ મળે ત્યારે જ ખોલો */
+  .nav-links.active {
+    display: flex !important;
+  }
+}
+
+/* ૩. ડેસ્કટોપ માટે: હંમેશા દેખાડો */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .membership-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .membership-tabs button,
+  .membership-tabs .tab {
+    width: 90%;
+    text-align: center;
+  }
+}
+.mobile-tabs{
+  display:flex;
+  flex-direction:column;
+  background:#111;
+  padding:10px;
+}
+
+.mobile-tabs button{
+  margin:5px 0;
+  padding:12px;
+  width:100%;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.bullet-dot {
+  color: #ff5a1f;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.features-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.features-list {
+  padding-left: 70px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    /* નીચેની લાઈનો ઉમેરો/બદલો */
+   
+    left: 0;
+    background-color: #000;
+    z-index: 1000; /* જેથી મેનુ સૌથી ઉપર દેખાય */
+    
+    display: none;
+    flex-direction: column;
+    padding: 20px; /* જગ્યા વધારવા માટે */
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* Jem ke mobile view mate */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column; /* Elements ne line ma niche lava */
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: none; /* Mobile ma menu hide karvu ane toggle icon mukvu */
+  }
+}
+/* ડેસ્કટોપ વ્યુ (ડિફોલ્ટ) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none; /* ડેસ્કટોપ પર હાઈડ રાખો */
+}
+
+/* મોબાઈલ વ્યુ (Media Query) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* મોબાઈલ પર બટન દેખાડો */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none; /* શરૂઆતમાં હાઈડ રાખો */
+    
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex; /* બટન ક્લિક કરવા પર દેખાડો */
+  }
+}
+/* નેવિગેશન મેનુ માટેની CSS */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* જ્યારે સ્ક્રીન નાની હોય ત્યારે (Mobile View) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* શરૂઆતમાં હાઈડ */
+    
+    
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex; /* મેનુ ખુલશે ત્યારે */
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+/* ડેસ્કટોપ પર Hamburger બટન છુપાવો */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  position: relative; /* આ ખૂબ જરૂરી છે */
+}
+
+/* મોબાઈલ માટે ખાસ સેટિંગ્સ */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* મેનુ બંધ હોય ત્યારે હાઈડ */
+  
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    flex-direction: column;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex; /* મેનુ ખૂલે ત્યારે દેખાય */
+  }
+
+  .menu-toggle {
+    display: block; /* મોબાઈલ પર હેમબર્ગર દેખાય */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* ડેસ્કટોપ પર હેમબર્ગર હાઈડ */
+  }
+}
+/* નેવિગેશન મેનુ માટેની CSS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  position: static; /* default positioning */
+}
+
+/* જ્યારે સ્ક્રીન નાની હોય ત્યારે (Mobile View) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* શરૂઆતમાં હાઈડ */
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #000;
+  }
+
+  .nav-links.active {
+    display: flex; /* મેનુ ખુલશે ત્યારે */
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-only-section {
+    display: block; /* આને હંમેશા બ્લોક રાખો */
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 15px 0; /* અંદરની જગ્યા થોડી વધારવી */
+    text-align: center;
+    border-bottom: 1px solid #333;
+    margin-top: 0; 
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* આ લાઈનથી લિંક્સ નીચેની લાઈનમાં આવશે */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%; /* આખી વિડ્થ લેશે */
+    order: 3;    /* લોગો અને સિટી સિલેક્ટર પછી જ દેખાશે */
+    background: #000;
+    padding: 15px;
+    border-top: 1px solid #333;
+  }
+
+  .nav-links.active {
+    display: flex; /* બટન ક્લિક કરતા નીચે ખુલશે */
+  }
+}
+/* Navbar માટે */
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* આ લાઈનથી એલિમેન્ટ્સ જરૂર પડે ત્યારે નીચેની લાઈનમાં આવશે */
+  padding: 10px 20px;
+  background-color: #000;
+  width: 100%;
+  position: relative;
+}
+
+/* મોબાઈલ વ્યુ માટે */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* શરૂઆતમાં છુપાવો */
+    width: 100%;
+    flex-direction: column;
+    order: 3; /* લોગો અને આઈકોન પછી જ મેનુ આવશે */
+    padding: 15px 0;
+    text-align: center;
+    background: #000;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex; /* બટન ક્લિક કરતા દેખાશે */
+  }
+
+  .menu-toggle {
+    display: block; /* હેમબર્ગર બટન દેખાડો */
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important; /* શરૂઆતમાં હાઈડ રાખવા */
+    flex-direction: column !important; /* આ લાઈન લિંક્સને ઉભી ગોઠવશે */
+    align-items: center !important;    /* લિંક્સને સેન્ટરમાં લાવશે */
+    width: 100% !important;
+    
+    top: 60px !important; /* હેડરની નીચે */
+    background-color: transparent; 
+    padding: 20px 0 !important;
+    z-index: 9999 !important;
+  }
+
+  .nav-links.active {
+    display: flex !important; /* ક્લિક કરવા પર દેખાશે */
+  }
+
+  .nav-link {
+    margin: 10px 0 !important; /* FITNESS અને STORE વચ્ચે જગ્યા બનાવશે */
+    display: block !important;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* આ લાઈન મેનુને નીચેની લાઈનમાં આવવા દેશે */
+  }
+
+  .nav-links {
+    display: none; /* શરૂઆતમાં મેનુ બંધ રહેશે */
+    flex-direction: column;
+    width: 100%;
+    background: #000;
+    order: 3; /* લોગો અને આઈકોન પછી જ મેનુ આવશે */
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex; /* મેનુ ખુલશે ત્યારે */
+  }
+
+  .menu-toggle {
+    display: block; /* મોબાઈલ પર જ બટન દેખાડો */
+  }
+}
+/* ૧. મેઈન નેવબારને ફિક્સ કરો */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative; /* આ ખૂબ મહત્વનું છે */
+  background-color: transparent; 
+  z-index: 1000;
+}
+
+/* ૨. મોબાઈલ પર મેનુ માટે */
+@media (max-width: 768px) {
+  .nav-links {
+     /* આને હેડરની બહાર કાઢશે */
+    top: 100%;          /* બરાબર હેડરની નીચે */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+   background-color: transparent; 
+    display: none;      /* શરૂઆતમાં બંધ */
+  }
+
+  .nav-links.active {
+    display: flex;      /* ક્લિક કરવા પર દેખાશે */
+  }
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  background: black;
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  background: black;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+ background-color: transparent; 
+  padding: 10px 20px;
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-item:hover .dropdown {
+  display: flex;
+}
+/* ડેસ્કટોપ વ્યુ (ડિફોલ્ટ) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none; /* ડેસ્કટોપ પર હાઈડ */
+}
+
+/* મોબાઈલ વ્યુ */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important; /* હેમબર્ગર બટન દેખાવું જોઈએ */
+  }
+
+  .nav-links {
+    display: none !important; /* મોબાઈલમાં શરૂઆતમાં બંધ */
+    
+   
+    left: 0;
+    width: 100%;
+    background-color: transparent; 
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links.active {
+    display: flex !important; /* જ્યારે JS દ્વારા class ઉમેરાય ત્યારે */
+  }
+}
+/* ૧. ડિફોલ્ટ (ડેસ્કટોપ) માટે */
+.menu-toggle {
+  display: none; /* ડેસ્કટોપ પર હેમબર્ગર બટન છુપાવો */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* ૨. મોબાઈલ (૭૬૮px થી નાની સ્ક્રીન) માટે */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* મોબાઈલમાં બટન બતાવો */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none; /* મોબાઈલમાં ડિફોલ્ટ બંધ રાખો */
+    flex-direction: column;
+  
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+  }
+
+  /* જ્યારે JS દ્વારા 'active' ક્લાસ ઉમેરાય ત્યારે */
+  .nav-links.active {
+    display: flex; 
+  }
+}
+/* આખા નવબાર માટે */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap; /* આ ખૂબ મહત્વનું છે */
+}
+
+@media (max-width: 768px) {
+  /* મોબાઈલમાં મેનુ કન્ટેનરને વર્ટિકલ કરો */
+  .nav-menu-wrapper {
+    display: none; /* શરૂઆતમાં હાઈડ */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .nav-menu-wrapper.active {
+    display: flex; /* ક્લિક કરવા પર નીચે ખુલશે */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* બધું એકબીજાની નીચે લાવવા માટે */
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none; /* શરૂઆતમાં હાઈડ */
+    flex-direction: column;
+    width: 100%;
+    order: 2; /* હેડરની નીચે મેનુ આવશે */
+  }
+
+  .nav-links.active {
+    display: flex; /* મોબાઈલમાં મેનુ ઓપન થશે ત્યારે */
+  }
+
+  /* પ્રોફાઇલ અને સિટી સિલેક્ટર માટે */
+  .navbar-right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* આ પ્રોપર્ટી તેને આપોઆપ જમણી બાજુ ધકેલશે */
+  flex-shrink: 0;   /* આ પ્રોપર્ટી આઈકોનને બહાર નીકળતા અટકાવશે */
+}
+}
+@media (max-width: 768px) {
+  /* ૧. navbar ને ફ્લેક્સ કોલમમાં બદલો */
+  .navbar {
+    display: flex;
+    flex-direction: column; /* આનાથી બધી વસ્તુઓ ઉપરથી નીચે ગોઠવાશે */
+    width: 100%;
+  }
+
+  /* ૨. nav-links ને absolute માંથી કાઢી નાખો */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    /* <--- આ લાઈન કાઢી નાખો */
+  }
+
+  .nav-links.active {
+    display: flex; /* આ હવે હેડરની બરાબર નીચે જગ્યા બનાવશે */
+  }
+}
+@media (max-width: 768px) {
+  /* ૧. આખા નેવબારને ફ્લેક્સ કોલમ બનાવો */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* ૨. હેડર પાર્ટ (લોગો અને બટન) */
+  .navbar-top {
+    display: flex;
+    width: 100%;
+  }
+
+  /* ૩. મેનૂ લિંક્સ - Absolute કાઢી નાખો */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    /*   <-- આ લાઈન કાઢી નાખો */
+    /*          <-- આ લાઈન કાઢી નાખો */
+   background-color: transparent; 
+    order: 2; /* આ એલિમેન્ટ લોગોની નીચે આવશે */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  /* આખા મેનુ કન્ટેનરને એક વ્યવસ્થિત કોલમ બનાવો */
+  .nav-links {
+    display: none; /* ડિફોલ્ટ બંધ */
+    flex-direction: column; /* આ ખૂબ મહત્વનું છે */
+    align-items: center;    /* આઈટમ્સને વચ્ચે લાવવા માટે */
+    width: 100%;
+   background-color: transparent; 
+    padding: 10px 0;
+  }
+
+  /* જ્યારે મેનુ ખુલે */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* ડ્રોપડાઉન આઈટમ્સ માટે */
+  .dropdown-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  /* ૧. આખા નેવબારને ફ્લેક્સ કોલમમાં બદલો જેથી બધું એકબીજાની નીચે આવે */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: transparent; 
+  }
+
+  /* ૨. લોગો અને હેમબર્ગર બટન માટે */
+  .navbar-header {
+    display: flex;
+    width: 100%;
+  }
+
+  /* ૩. મેનૂ લિંક્સ (FITNESS, STORE વગેરે) */
+  .nav-links {
+    display: none; /* શરૂઆતમાં મેનૂ છુપાવો */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px; /* હેડર અને મેનૂ વચ્ચે ગેપ માટે */
+  }
+
+  /* જ્યારે મેનૂ JS દ્વારા 'active' થાય ત્યારે */
+  .nav-links.active {
+    display: flex; 
+  }
+}
+@media (max-width: 768px) {
+  /* મેનુ કન્ટેનરને ક્લીન કરો */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent; /* જો બેકગ્રાઉન્ડ ન જોઈતું હોય તો */
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* જે કાળો બોક્સ દેખાય છે તે આ ક્લાસના કારણે હોઈ શકે */
+  .nav-link {
+    display: block;
+    padding: 10px;
+    background-color: transparent; /* બેકગ્રાઉન્ડ કાઢી નાખો */
+    color: white; /* ટેક્સ્ટ કલર */
+    text-decoration: none;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    /* ગેપ ઓછી કરવા માટે gap પ્રોપર્ટીનો ઉપયોગ કરો */
+    gap: 5px; 
+    padding: 5px 0;
+  }
+
+  /* જો લિંક્સની આસપાસ વધારે જગ્યા હોય તો તે ઘટાડો */
+  
+}
+@media (max-width: 768px) {
+  /* મેનૂ લિંક્સનું કન્ટેનર */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0px; /* લિંક્સ વચ્ચેની ખાલી જગ્યા ઓછી કરવા માટે */
+    padding: 0px; /* આસપાસની વધારાની જગ્યા દૂર કરવા */
+  }
+
+  /* જો લિંક્સ (FITNESS, STORE) પર અલગથી પેડિંગ હોય તો તે ઘટાડો */
+  
+}
+/* ૧. બટન માટે ડિફોલ્ટ સ્ટાઈલિંગ રીસેટ કરો */
+button {
+    appearance: none; /* આ લાઈનથી બ્રાઉઝરની ડિફોલ્ટ સ્ટાઈલ જતી રહેશે */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+
+/* ૨. મોબાઈલ ટેબ્સ કન્ટેનર */
+.mobile-tabs button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    background-color: #1a1a1a; /* ડાર્ક મોડ માટે સારું બેકગ્રાઉન્ડ */
+    color: white;
+    border-radius: 8px; /* થોડા ખૂણા ગોળ કરવા */
+    border: 1px solid #333;
+}
+
+/* ૩. ટેક્સ્ટ કલર પ્રોબ્લેમ સોલ્વ કરવા */
+:root {
+    --bg: #010204; /* તમારા ડાર્ક મોડ સાથે મેચ કરવા માટે */
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.get-app-btn {
+  padding: 5px 10px;    /* બટનનું પેડિંગ નાનું કરો */
+  margin: 0;           /* કોઈ માર્જિન ન રાખો */
+  font-size: 14px;     /* ફોન્ટ સાઈઝ થોડી નાની કરો */
+}
+
+.profile-icon img {
+  width: 30px;         /* આઈકોનની સાઈઝ અડજસ્ટ કરો */
+  height: 30px;
+}
+/* ૧. રૂટ અને બોડી સેટિંગ્સ */
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+}
+
+/* ૨. મેઈન નેવબાર (વ્યવસ્થિત લેઆઉટ) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* લોગો અને જમણી બાજુના કન્ટેન્ટને દૂર રાખશે */
+  padding: 15px 30px;
+  background-color: #000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ૩. નેવબારના ભાગો */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* આઈટમ્સ વચ્ચેનું અંતર */
+  flex-shrink: 0; /* આઈકોનને બહાર નીકળતા અટકાવશે */
+}
+
+/* ૪. મોબાઈલ વ્યુ માટે */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* આઈટમ્સ આડી જ રહેશે */
+    padding: 10px;
+  }
+  
+  /* મોબાઈલમાં ગેપ ઘટાડો */
+  .navbar-right-section {
+    gap: 8px;
+  }
+}
+/* ૧. નેવબારનું કન્ટેનર - આ સૌથી ઉપર હોવું જોઈએ */
+.navbar {
+  position: relative;
+  z-index: 1000; /* આ મેનૂને સૌથી ઉપર રાખશે */
+}
+
+/* ૨. ડ્રોપડાઉન મેનૂ (FITNESS/STORE) */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static; /* absolute ને બદલે static */
+    width: 100%;
+    background-color: #000;
+    display: none; /* JS થી જ્યારે એક્ટિવ થાય ત્યારે જ દેખાશે */
+    border-top: 1px solid #333;
+  }
+
+  .dropdown-menu.active {
+    display: block; /* અથવા flex */
+  }
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+/* ૩. બાકીનું કન્ટેન્ટ (દા.ત. ELITE FITNESS STORE) */
+.main-content {
+  position: relative;
+  z-index: 1; /* આ મેનૂની નીચે રહેશે */
+  margin-top: 20px; /* થોડી જગ્યા રાખવા માટે */
+}
+/* આનાથી ઉપર અને નીચેની વધારાની જગ્યા જતી રહેશે */
+.mobile-tabs button {
+    margin-block: 0px !important; 
+}
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+/* TOP NAV */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-center {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.get-app {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* BOTTOM NAV */
+
+
+.tab {
+  font-size: 13px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+}
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 20px;
+  background: #111;
+  position: relative;
+  z-index: 100;
+}
+
+.tab {
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.get-app {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.content-area {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+/* મૂળ સેટિંગ્સ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* ટોપ નેવબાર */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #222;
+}
+
+/* બોટમ નેવબાર (મેનુ) */
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 20px;
+  background: #111;
+}
+
+.tab {
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* મોબાઈલ વ્યુ માટે */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  .navbar-bottom {
+    display: none; /* શરૂઆતમાં હાઈડ */
+    flex-direction: column;
+    width: 100%;
+   
+    background: #000;
+    z-index: 1000;
+  }
+
+  .navbar-bottom.active {
+    display: flex; /* મેનુ ખુલશે ત્યારે */
+  }
+
+  .tab {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    text-align: center;
+  }
+}
+
+/* ડેસ્કટોપ માટે */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+/* આ મેન કન્ટેન્ટને નેવબારની નીચે રાખશે */
+.main-content {
+  margin-top: 20px; /* થોડી જગ્યા આપો */
+  position: relative;
+  z-index: 1; /* નેવબારની પાછળ રહે */
+}
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;   /* reduce gap */
+  margin-bottom: 8px;
+}
+
+.bullet-dot {
+  font-size: 16px;
+  line-height: 1;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.feature-item span {
+  line-height: 1.4;
+}
+.mobile-tabs {
+    display: flex;
+    flex-direction: column; /* આનાથી બટન એકબીજાની નીચે આવશે */
+    gap: 10px;              /* બટનો વચ્ચે યોગ્ય જગ્યા રાખશે */
+}
+
+.mobile-tabs button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: left;       /* લખાણને ડાબી બાજુ રાખવા માટે */
+    margin: 0;              /* માર્જિન 0 કરો જેથી જગ્યા વધે નહીં */
+}
+/* આ CSS તમારી ફાઈલમાં ઉમેરો */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* મોબાઈલ પર નેવબારના મેનુ બટન્સ છુપાવી દો */
+  }
+}
