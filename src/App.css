@@ -2573,3 +2573,29 @@ body {
     display: none; /* મોબાઈલ પર નેવબારના મેનુ બટન્સ છુપાવી દો */
   }
 }
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ઈમેજ ઓટોમેટિકલી ગોઠવાઈ જશે */
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 300px;         /* બધી ઈમેજની ઊંચાઈ એકસમાન રહેશે */
+  object-fit: cover;     /* ઈમેજ ખેંચાશે નહીં, પણ વ્યવસ્થિત ક્રોપ થશે */
+  border-radius: 10px;   /* ખૂણા ગોળ કરવા માટે */
+  transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05); /* માઉસ લઈ જશો તો ઈમેજ થોડી મોટી થશે */
+}
+.card {
+  background-image: url(${bgImage}); /* આ તમારો ડાયનેમિક કોડ */
+  background-size: cover;          /* ઈમેજ આખા કાર્ડમાં ફેલાઈ જશે */
+  background-position: center;     /* ઈમેજ વચ્ચે રહેશે */
+  background-repeat: no-repeat;
+  min-height: 200px;               /* ઊંચાઈ હોવી ખૂબ જરૂરી છે */
+  width: 100%;                     /* પહોળાઈ */
+}

@@ -64,6 +64,8 @@ import coach1 from "./assets/images/coach1.avif";
 import coach2 from "./assets/images/coach2.avif";
 import coach3 from "./assets/images/coach3.avif";
 import { img } from 'framer-motion/client';
+
+const images = [ img17,  img19, img20, ];
 /// ૧. મુખ્ય પ્રોડક્ટ્સ અને પ્લાન્સનો ડેટા
 const servicesData = {
   "cultpass Home": {
@@ -168,7 +170,7 @@ const liveWorkoutsData = [
   trainer: "Ranveer Singh",
   title: "Strength Labs",
   level: "STRENGTH • ADVANCED • 45 Min",
-  bgImage: img5
+  img: img5
 }
 ];
 
@@ -556,6 +558,7 @@ const JoinButton = () => {
     <div className="right-section" style={{ backgroundImage: `url(${currentData.bgImage})` }}></div>
   </main>
 )}
+
 {/* નવું સ્લાઇડર સેક્શન અહીં મૂકો */}
       {activeTab === "cult Transform" && (
         <section className="transform-slider-section" style={{ position: 'relative', width: '100%', height: '400px', overflow: 'hidden', marginBottom: '30px' }}>
@@ -569,6 +572,7 @@ const JoinButton = () => {
           <button style={{ position: 'absolute', top: '45%', right: '10px' }} onClick={() => setTransformSlide(prev => (prev === 4 ? 0 : prev + 1))}>❯</button>
         </section>
       )}
+      
       {/* Transform સેક્શન અને તેની નીચેના ૪ બોક્સ */}
 {activeTab === "cult Transform" && (
   <>
@@ -650,6 +654,7 @@ const JoinButton = () => {
     </div>
   </>
 )}
+
       {/* ૪. ઓફર કાઉન્ટડાઉન ટાઈમર બેનર - માત્ર Home માટે */}
 {activeTab === "cultpass Home" && (
   <section className="timer-banner">
@@ -861,7 +866,16 @@ const JoinButton = () => {
         ✓ On demand 1:1 calls as per your chosen slot
       </p>
     </div>
-    
+    <div className="App">
+      <h1>મારી ગેલેરી</h1>
+      
+      <div className="gallery-container">
+  {images.map((img, index) => (
+    <img key={index} src={img} alt={`Workout ${index + 16}`} />
+  ))}
+  <img src={img18} alt="Workout" />
+</div>
+    </div>
     {/* સાપ્તાહિક પ્લાન (Weekly Schedule) */}
     {[
       { day: 'M', title: 'Partner + Station + Games', type: 'AT-CENTER WORKOUT' },
@@ -895,6 +909,7 @@ const JoinButton = () => {
     ))}
   </section>
 )}
+
 {activeTab === "Bootcamp" && (
   <section style={{ padding: '60px 20px', backgroundColor: '#000', color: '#fff' }}>
     <h2 style={{ marginBottom: '40px' }}>Sneak peek of our last Bootcamp</h2>
