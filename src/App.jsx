@@ -867,7 +867,7 @@ const JoinButton = () => {
       </p>
     </div>
     <div className="App">
-      <h1>મારી ગેલેરી</h1>
+      <h1></h1>
       
       <div className="gallery-container">
   {images.map((img, index) => (
@@ -910,41 +910,7 @@ const JoinButton = () => {
   </section>
 )}
 
-{activeTab === "Bootcamp" && (
-  <section style={{ padding: '60px 20px', backgroundColor: '#000', color: '#fff' }}>
-    <h2 style={{ marginBottom: '40px' }}>Sneak peek of our last Bootcamp</h2>
-    <div style={{ marginBottom: '40px' }}>
-      <h3 style={{ color: '#00d2d3', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '10px' }}>
-       our Bootcamp pictures
-      </h3>
-      <h1 style={{ fontSize: '36px', margin: '0' }}>Sneak peek of our last Bootcamp</h1>
-    </div>
-    <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-      gap: '20px' 
-    }}>
-      {/* અહિંયા કામ કરતી લિંક્સ છે */}
-      {[
-        img17,
-        
-        
-       img18,
-        img19,
-         img20,
-      ].map((imgUrl, index) => (
-        <div key={index} style={{ 
-          height: '250px', 
-          backgroundColor: '#333', 
-          borderRadius: '15px', 
-          overflow: 'hidden' 
-        }}>
-         
-        </div>
-      ))}
-    </div>
-  </section>
-)}
+
 {activeTab === "Bootcamp" && (
   <section style={{ padding: '60px 20px', backgroundColor: '#000', color: '#fff' }}>
     <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>FAQ</h2>
